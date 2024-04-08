@@ -28,7 +28,6 @@ import java.io.IOException;
 
 public class DemoApp extends Application {
     public static Scene scene;
-
     public static Firestore fstore;
     public static FirebaseAuth fauth;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
@@ -45,6 +44,8 @@ public class DemoApp extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+        scene.getWindow().sizeToScene();
+        scene.getWindow().centerOnScreen();
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

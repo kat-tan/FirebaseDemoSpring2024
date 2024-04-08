@@ -69,6 +69,7 @@ public class PrimaryController {
 
     public boolean readFirebase()
     {
+        outputTextArea.clear();
         key = false;
 
         //asynchronously retrieve all documents
@@ -84,9 +85,9 @@ public class PrimaryController {
                 listOfUsers.clear();
                 for (QueryDocumentSnapshot document : documents)
                 {
-                    outputTextArea.setText(outputTextArea.getText() + "Name: " + document.getData().get("Name") +
-                            ", Age: " + document.getData().get("Age") +
-                            ", Phone Number: " + document.getData().get("Phone Number") + " \n");
+                    outputTextArea.setText(outputTextArea.getText() + document.getData().get("Name") +
+                            ", " + document.getData().get("Age") +
+                            ", " + document.getData().get("Phone Number") + " \n");
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
                     person  = new Person(String.valueOf(document.getData().get("Name")),
                             Integer.parseInt(document.getData().get("Age").toString()),
@@ -118,9 +119,17 @@ public class PrimaryController {
             data.put("Age", Integer.parseInt(ageTextField.getText()));
             data.put("Phone Number", phoneNumberField.getText());
 
+            nameTextField.clear();
+            ageTextField.clear();
+            phoneNumberField.clear();
             System.out.println("Data Added");
+
             //asynchronously write data
             ApiFuture<WriteResult> result = docRef.set(data);
         }
+    }
+
+    public void onBacktoWelcomeBtn() throws IOException {
+        DemoApp.setRoot("welcome");
     }
 }

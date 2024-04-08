@@ -5,30 +5,30 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane stylesheets="@Demo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aydin.firebasedemospring2024.PrimaryController">
-    <children>
-        <VBox alignment="CENTER" prefHeight="402.0" prefWidth="613.0" spacing="20.0" stylesheets="@Demo.css">
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-            </padding>
-            <children>
-            <Label prefHeight="18.0" prefWidth="543.0" text="CSC325-SW Engineering Student: check out the console window for the output messages..." />
-                <TextField fx:id="nameTextField" promptText="Name" />
-                <TextField fx:id="ageTextField" promptText="Age" />
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@firebasedemo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aydin.firebasedemospring2024.PrimaryController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="414.0" prefWidth="610.0" spacing="20.0" stylesheets="@firebasedemo.css" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="543.0" text="CSC325-SW Engineering Student: See console window for output messages." />
+            <TextField fx:id="nameTextField" promptText="Name" />
+            <TextField fx:id="ageTextField" promptText="Age" />
             <TextField fx:id="phoneNumberField" promptText="Phone Number" />
-                <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="518.0" spacing="10.0">
-                    <children>
-                        <Button fx:id="readButton" mnemonicParsing="false" onAction="#readButtonClicked" prefHeight="30.0" prefWidth="80.0" text="Read" />
-                        <Button fx:id="writeButton" mnemonicParsing="false" onAction="#writeButtonClicked" prefHeight="30.0" prefWidth="80.0" text="Write" />
-                        <Button fx:id="switchSecondaryViewButton" onAction="#switchToSecondary" prefHeight="30.0" prefWidth="180.0" text="Switch to Secondary View" />
-                    </children>
-                </HBox>
-                <TextArea fx:id="outputTextArea" editable="false" prefHeight="218.0" prefWidth="507.0" />
-            </children>
-        </VBox>
-    </children>
-</AnchorPane>
+            <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="518.0" spacing="10.0">
+               <children>
+                  <Button fx:id="readButton" mnemonicParsing="false" onAction="#readButtonClicked" prefHeight="30.0" prefWidth="80.0" text="Read" />
+                  <Button fx:id="writeButton" mnemonicParsing="false" onAction="#writeButtonClicked" prefHeight="30.0" prefWidth="80.0" text="Write" />
+                  <Button fx:id="switchSecondaryViewButton" onAction="#switchToSecondary" prefHeight="30.0" prefWidth="180.0" text="Switch to Secondary View" />
+                  <Button onAction="#onBacktoWelcomeBtn" prefHeight="27.0" prefWidth="109.0" text="Back to Sign In" />
+               </children>
+            </HBox>
+            <TextArea fx:id="outputTextArea" editable="false" prefHeight="218.0" prefWidth="507.0" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
